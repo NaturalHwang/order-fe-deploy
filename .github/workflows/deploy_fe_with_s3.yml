@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     # 각 작업은 여러 step(단계)로 구성
     steps:
+    # actions는 github에서 제공되는 공식 워크플로우
+    # checkout은 현재 repo의 main 브랜치 소스코드를 copy
       - name: source code checkout
         uses: actions/checkout@v2
       
@@ -34,5 +36,5 @@ jobs:
           aws-secret-access-key: ${{secrets.AWS_SECRET}}
           aws-region: "ap-northeast-2"
       
-      -name: clear s3 bucket
-       run: aws s3 rm s3://www.jungha.store/ --recursive
+      - name: clear s3 bucket
+        run: aws s3 rm s3://www.jungha.store/ --recursive
