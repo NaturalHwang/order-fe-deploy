@@ -72,7 +72,7 @@ export default{
                     email:this.email,
                     password: this.password
                 }
-                const response = await axios.post(`${process.env.VUE_APP_API_BASE_URL}/member-service/doLogin`, loginData)  
+                const response = await axios.post(`${process.env.VUE_APP_API_BASE_URL}/doLogin`, loginData)  
                 // 로컬 스토리지라는 브라우저의 특정 공간에 서버로부터 받아온 토큰 값 저장
                 const token = response.data.result.token
                 const refreshToken = response.data.result.refreshToken

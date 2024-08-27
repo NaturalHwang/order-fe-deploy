@@ -151,7 +151,7 @@ export default{
                     params.category = this.searchValue
                 }
                 // localhost:8080/product/list?category=fruites&size=5&page=0 또는 name=apple&size=5&page=0
-                const response = await axios.get(`${process.env.VUE_APP_API_BASE_URL}/product-service/product/list`, {params}) // {params} URL에 ?달고 들어감
+                const response = await axios.get(`${process.env.VUE_APP_API_BASE_URL}/product/list`, {params}) // {params} URL에 ?달고 들어감
                 const additionalData = response.data.result.content.map(p=>({...p, quantity:0}))
                 if(additionalData.length==0){
                     this.isLoading = false
